@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React from 'react';
 import HomePageComponent from '../../Components/HomePage/HomePage';
 const HomePage = () => {
     return(

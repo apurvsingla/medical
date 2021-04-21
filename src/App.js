@@ -11,7 +11,7 @@ import {
 import HomePage from './Pages/HomePage/HomePage.js'
 import Cart from './Pages/Cart/Cart';
 import Header from './Components/Header/Header.js';
-import Footer from './Components/Footer/Footer.js';
+// import Footer from './Components/Footer/Footer.js';
 function App() {
   return (
     <Router>

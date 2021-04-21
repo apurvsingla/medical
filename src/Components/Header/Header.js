@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import SearchIcon from '@material-ui/icons/Search';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+// import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import LocalMallIcon from '@material-ui/icons/LocalMall';
 import {HeaderMain} from './Header.styles';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';

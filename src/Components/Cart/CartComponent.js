@@ -1,8 +1,8 @@
 import React from 'react'
 import {useData, usePrice,useItemDect,useDelete} from '../context';
-
+import DeleteIcon from '@material-ui/icons/Delete';
 import {useHistory} from 'react-router-dom';
-
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 function CartComponent({currentUser, p}) {
     // console.log(currentUser,p)
     const data = useData();
@@ -21,16 +21,36 @@ function CartComponent({currentUser, p}) {
                 }
                 return(
                 <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                    <span>{i.title}: &nbsp;</span>
-                    <span>{i.quantity}X{i.price} &nbsp;= &nbsp;</span>
-                    <span>{i.quantity*i.price} &nbsp;</span>
-                    <span onClick={(e) => {
+                    <table>
+                    <tr>
+                        <td>
+                        <span>{i.title}:</span>
+                        </td>
+                        <td>
+                            <span>{i.quantity}X{i.price}</span>
+                        </td>
+                        <td>
+                    <span>{i.quantity*i.price} </span>
+                    </td>
+                    <td>
+                    <span 
+                    style={{cursor: 'pointer'}}
+                    onClick={(e) => {
                         console.log(i)
                         decreaseQuantity(i); 
-                        }}>Decrease&nbsp;</span>
-                    <span onClick={(e) =>{
+                        }}><ArrowDropDownIcon /> </span>
+                        </td>
+                        <td>
+                    <span 
+                     style={{cursor: 'pointer'}}
+                     onClick={(e) =>{
                         deleteQuan(i)
-                    }}>Delete</span>
+                    }}>
+                        <DeleteIcon />
+                    </span>
+                    </td>
+                    </tr>
+                    </table>
                 </div>
                 )
             })}

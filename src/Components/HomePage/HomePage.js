@@ -24,7 +24,9 @@ const HomePageComponent = () => {
 
     const Button = () => {
         return(
-        <div style={{textAlign: 'center', backgroundColor: 'lightgray', padding: '7px'}}>
+        <div style={{textAlign: 'center', backgroundColor: 'lightgray', padding: '7px'}}
+        className="button"
+        >
             <h2>Not sure where to start? We can help</h2>
             <p>Let's understand you a bit by asking a few questions before you talk to our experts</p>
             <button style={{width: '15rem', height: '3rem',backgroundColor: 'black', 

@@ -4,9 +4,6 @@ import {
   Switch,
   Route,
   Redirect
-  // Link,
-  // useRouteMatch,
-  // useParams
 } from "react-router-dom";
 import {ItemProvider} from './Components/context';
 import HomePage from './Pages/HomePage/HomePage.js'

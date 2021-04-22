@@ -12,19 +12,21 @@ function MainSection() {
                 <img 
                 src={Hair}
                 alt="hair"
-                height="80"
+                className="imagess"
                 style={{cursor: 'pointer'}}
                 />
                  &#8287; &#8287; &#8287;
                 <img 
                 style={{cursor: 'pointer'}}
                 src={Skin}
-                alt="hair" height="80"
+                className="imagess"
+                alt="hair"
                 />
                  &#8287; &#8287; &#8287;
                 <img style={{cursor: 'pointer'}}
                 src={Weight}
-                alt="hair" height="80"
+                className="imagess"
+                alt="hair"
                 />
             </span>
         </div>

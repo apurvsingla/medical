@@ -6,4 +6,10 @@ export const HomeComponent = styled.div`
     background-image: url(${props => props.img});
     height: 90vh;
     background-size: cover;
+
+    @media screen and (max-width: 768px){
+        background-image: url(null);
+        height: 100vh;
+        padding-top: 0;
+    }
 `

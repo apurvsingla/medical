@@ -36,7 +36,7 @@ const HairComponent = ({data, onStart}) => {
             <Typography variant="body2" color="textSecondary" component="p">
                 <p>For: {data.for}</p>
                 <p>With: {data.with}</p>
-                <p>{data.price}: {data.discount}</p>
+                <p>Rs {data.price} - {data.discount}</p>
                 
             </Typography>
             </CardContent>

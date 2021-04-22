@@ -3,12 +3,12 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 const config = {
-    apiKey: process.env.REACT_APP_API_KEY,
+    apiKey: "AIzaSyByzBU9pDq3cZXVuq8P6YlskiVw39fwsNc",
     authDomain: "shopping-eef6c.firebaseapp.com",
     projectId: "shopping-eef6c",
     storageBucket: "shopping-eef6c.appspot.com",
     messagingSenderId: "795888645896",
-    appId: process.env.REACT_APP_APP_ID,
+    appId: "1:795888645896:web:9a89611f62dbd118fb9ebd",
     measurementId: "G-K9BDHYDCM3"
   }
 

@@ -1,0 +1,15 @@
+.mainSectionImp{
+    background-color: white;
+    border: 1px solid whitesmoke;
+    height: auto;
+    width: auto;
+    margin: 8vh auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    @media screen and (min-width: 768px){
+        width: 39vw
+    }
+}

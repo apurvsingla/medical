@@ -1,0 +1,60 @@
+.otherIcons {
+    padding-left: 15px;
+    padding-bottom: 3px;
+    width: 40;
+    height: 30;
+    color: white;
+    cursor: pointer;
+    @media screen and (max-width: 400px){
+        padding-top: 10px;
+    }
+}
+
+.otherText {
+    padding-right: 2%;
+     padding-top: 8px;
+     color: white;
+    font-weight: 450;
+    cursor: pointer;
+    @media screen and (max-width: 1008px){
+        display: none;
+        box-sizing: border-box;
+    }
+}
+
+.mainHeading {
+    padding-right: 4%;
+    font-weight: normal;
+    color: white;
+    cursor: pointer;
+    @media screen and (max-width: 768px){
+        padding: 0;
+        position: relative;
+        right: 50px;
+    }
+    @media screen and (max-width: 445px){
+        right: 30px;
+    }
+    @media screen and (max-width: 400px){
+        right: 20px;
+    }
+    @media screen and (max-width: 340px){
+        right: 10px;
+    }
+}
+
+.search {
+    padding-top: 15px;
+    padding-left: 22px;
+    height: 3px;
+    width: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+.menuItems {
+    width: 9vw;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}

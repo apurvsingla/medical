@@ -10,4 +10,11 @@ export const HeaderMain = styled.div`
     background: black;
     position: fixed;
     box-sizing: border-box;
+    z-index: 2;
+    top: 0;
+    @media screen and (max-width: 1008px){
+        justify-content: space-between;
+    }
 `;
+
+

@@ -1,10 +1,10 @@
 import React from 'react';
+import CartComponent from '../../Components/Cart/CartComponent';
 
-
-const Cart = () => {
+const Cart = ({currentUser, p}) => {
     return(
         <>
-            CART
+           <CartComponent p={p} currentUser={currentUser}/>
         </>
     )
 }

@@ -1,0 +1,25 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    padding-right: 7%;
+    padding-left: 10%;
+}
+
+.mainWork{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @media screen and (max-width: 767px){
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.doctor{
+    width: 40%;
+    @media screen and (max-width: 767px){
+        width: 100%;
+    }
+}

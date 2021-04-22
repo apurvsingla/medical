@@ -8,28 +8,28 @@ import {HeaderMain} from './Header.styles';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import ReactWhatsapp from 'react-whatsapp';
+// import {Weight} from '../source'
+import {useItem} from '../context';
+import MenuIcon from '@material-ui/icons/Menu';
+import {useMediaQuery} from '../MediaQuery/MediaQuery';
+import {auth} from '../../firbase/firebase.utils';
+import { useHistory, Link } from "react-router-dom";
+import './Header.scss';
+
 const sidebar = {
     menuItem: {
-        width: '9vw', display: 'flex', justifyContent: 'center'
-    },
-    search: {
-        paddingTop: '15px',paddingLeft: '22px', height: 34, width: 40, color: 'white'
-    },
-    otherIcons: {
-        paddingLeft: '15px', paddingBottom: '3px', width: 40,height: 30, color: 'white'
-    },
-    otherText: {
-        paddingRight: '2%', paddingTop: '8px', color: 'white',fontWeight: '450'
-    },
-    mainHeading: {
-        paddingRight: '4%', fontWeight: 'normal',color: 'white'
+        width: '9vw', display: 'flex', justifyContent: 'center', cursor: 'pointer'
     }
 }
 
-const Header = () => {
+const Header = ({currentUser}) => {
+    let history = useHistory();
+    let isPageWide = useMediaQuery('(max-width: 768px)')
+    let isPageWideSearch = useMediaQuery('(max-width: 400px)')
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
-
+    const Item = useItem();
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -39,13 +39,18 @@ const Header = () => {
     };
     return(
         <HeaderMain>
-            <h1 style={sidebar.mainHeading}><sup style={{fontSize: '0.7rem', 
-            position: 'relative', bottom: '3px'}}>BE</sup>
+            {isPageWide ? <MenuIcon style={{color: 'white'}}/> : null}
+            <h1 className="mainHeading"><sup style={{fontSize: '0.7rem', 
+            position: 'relative', bottom: '3px', }}>BE</sup>
+            <span onClick={() => history.push('/')}>
                 Bodywise
+                </span>
             </h1>
-            <span style={sidebar.otherText} >Shop</span>
-            <span style={sidebar.otherText} >Take Self - Assessment</span>
-            <span style={sidebar.otherText}>
+            <span
+            className="otherText"
+            >Shop</span>
+            <span className="otherText" >Take Self - Assessment</span>
+            <span className="otherText">
                 <span onClick={handleClick}>
                     Choose Concerns
                     <ExpandMoreIcon style={{
@@ -64,14 +69,32 @@ const Header = () => {
                     <MenuItem onClick={handleClose} style={sidebar.menuItem}>Weight</MenuItem>
                 </Menu>
             </span>
-            <span style={sidebar.otherText}>All Products</span>
-            <span style={sidebar.otherText}>Book Consultaiton</span>
+            <span className="otherText">All Products</span>
+            <span className="otherText">Book Consultaiton</span>
 
             <span>
-                <SearchIcon  style={sidebar.search}/>
-                <WhatsAppIcon style={sidebar.otherIcons}/>
-                <AccountCircleIcon style={sidebar.otherIcons}/>
-                <LocalMallIcon style={sidebar.otherIcons}/>
+                {isPageWideSearch ? null :  <SearchIcon  className="search"/>}
+               
+                <WhatsAppIcon className="otherIcons"/>
+                <ReactWhatsapp number="1-212-736-5000" message="Hi! I want to know more about the products!" 
+                style={{position: 'absolute', marginLeft:'-30px',marginTop: '17px', border: 'none',    
+                height: '5vh', width: '2vw', zIndex: '2', overflow: 'hidden', backgroundColor: 'transparent',
+                outline: 'none', cursor: 'pointer'
+                }}/>
+                {currentUser ? <span className="option"
+                style={{color: 'white', cursor: 'pointer',}}
+                onClick={() => auth.signOut()}
+                >
+                    SIGN OUT
+                </span>: <Link
+                className="signin"
+                to="/signIn"
+                >
+                <AccountCircleIcon className="otherIcons" onClick={()=> history.push('/signIn')}/>
+                    
+                    </Link>}
+                <LocalMallIcon className="otherIcons" onClick={() => history.push('/cart')}/>
+                <span style={{color: 'white'}}>{Item}</span>
             </span>
             {/* <AppBar position="static"   className={classes.appbar}>
         <Toolbar>
